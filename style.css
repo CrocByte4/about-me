@@ -3,4 +3,13 @@ h1 {
 }
 
 p {
+  color: black;
+  font-size: large;
+  background-color: khaki;
+  border-style: ridge;
+  width: fit-content;
+}
+
+p.userChoice {
+  background-color: <buttonColour>;
 }
