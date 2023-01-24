@@ -9,7 +9,3 @@ p {
   border-style: ridge;
   width: fit-content;
 }
-
-p.userChoice {
-  background-color: <buttonColour>;
-}
