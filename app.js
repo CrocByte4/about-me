@@ -2,6 +2,11 @@
 
 function getName() {
   let userName = prompt("What is your name?");
+  alert(
+    "Welcome to my about me website " +
+      userName +
+      "! BUT before we get to the page I'd like to play a little game with you. Please answer yes or no to the following:"
+  );
   document.write(userName);
   console.log(userName);
 }
