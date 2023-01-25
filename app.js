@@ -11,9 +11,10 @@ function getName() {
   console.log(userName);
 }
 
-function quiz() {
   let quizScore = 0;
-  let question1 = prompt("Do I have a dog?");
+
+  function getDog() {
+    let question1 = prompt("Do I have a dog?");
   console.log(question1);
 
   if (question1.toLowerCase() === "yes") {
@@ -24,8 +25,11 @@ function quiz() {
   } else {
     alert("That's not a real answer");
   }
+  }
+  
+  function getJob() {
 
-  let question2 = prompt("Do I have a job?");
+    let question2 = prompt("Do I have a job?");
   console.log(question2);
 
   if (question2.toLowerCase() === "yes") {
@@ -36,8 +40,10 @@ function quiz() {
   } else {
     alert("That's not a real answer");
   }
-
-  let question3 = prompt("Can I drive a car?");
+  }
+  
+  function getCar(){
+    let question3 = prompt("Can I drive a car?");
   console.log(question3);
 
   if (question3.toLowerCase() === "yes") {
@@ -50,8 +56,10 @@ function quiz() {
   } else {
     alert("That's not a real answer");
   }
-
-  let question4 = prompt("Do I eat a lot of cheese?");
+  }
+  
+  function getCheese(){
+    let question4 = prompt("Do I eat a lot of cheese?");
   console.log(question4);
 
   if (question4.toLowerCase() === "yes") {
@@ -62,8 +70,11 @@ function quiz() {
   } else {
     alert("That's not a real answer");
   }
+  }
+  
 
-  let question5 = prompt("Am I a gamer?");
+  function getGamer(){
+    let question5 = prompt("Am I a gamer?");
   console.log(question5);
 
   if (question5.toLowerCase() === "yes") {
@@ -74,8 +85,13 @@ function quiz() {
   } else {
     alert("That's not a real answer");
   }
+  }
+  
+  function getScore(){
   alert("You've reached the end, well done! You got " + quizScore + "/5");
+  }
 
+ function getNumber(){
   let question6 = prompt(
     "But there's just one more thing. I'm thinking of a number between 1 and 10. What is it? You have 4 tries"
   );
@@ -85,7 +101,8 @@ function quiz() {
   } else if (question6 < 8) {
     question6 = prompt("Nope, too small");
   }
-}
+ } 
+
 // this wasnt working so get back to this
 //( if (question6() === 8) {
 //  alert("Nice one, you got it!");
