@@ -80,16 +80,20 @@ function quiz() {
     "But there's just one more thing. I'm thinking of a number between 1 and 10. What is it? You have 4 tries"
   );
   console.log(question6);
-
   if (question6 === 8) {
-    alert("Nice one, you got it!");
+    alert("Well done that was it");
   } else if (question6 < 8) {
-    let question6 = prompt("Bigger than that, try again");
-  } else if (question6 > 8) {
-    let question6 = prompt("Smaller than that, give it another go");
-    alert("Aww that's all folks. It was 8 all along");
+    question6 = prompt("Nope, too small");
   }
 }
+// this wasnt working so get back to this
+//( if (question6() === 8) {
+//  alert("Nice one, you got it!");
+// } else if (question6() < 8) {
+//   let question6 = prompt("Bigger than that, try again");
+// } else if (question6() > 8) {
+//   let question6 = prompt("Smaller than that, give it another go");
+//  alert("Aww that's all folks. It was 8 all along");
 
 function changeColour() {
   let buttonColour = prompt("What is your favourite colour?");
