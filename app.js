@@ -75,6 +75,20 @@ function quiz() {
     alert("That's not a real answer");
   }
   alert("You've reached the end, well done! You got " + quizScore + "/5");
+
+  let question6 = prompt(
+    "But there's just one more thing. I'm thinking of a number between 1 and 10. What is it? You have 4 tries"
+  );
+  console.log(question6);
+
+  if (question6 === 8) {
+    alert("Nice one, you got it!");
+  } else if (question6 < 8) {
+    let question6 = prompt("Bigger than that, try again");
+  } else if (question6 > 8) {
+    let question6 = prompt("Smaller than that, give it another go");
+    alert("Aww that's all folks. It was 8 all along");
+  }
 }
 
 function changeColour() {
