@@ -90,53 +90,46 @@ function getScore() {
 }
 
 function getNumber() {
-  tries = 4;
+  alert("But there's just one more thing.");
+  let tries = 4;
+  let question6 = prompt(
+    "I'm thinking of a number between 1 and 10. What is it? You have " +
+      tries +
+      " tries remaining"
+  );
+
   for (let i = 4; i > 0; i--) {
-    let question6 = prompt(
-      "But there's just one more thing. I'm thinking of a number between 1 and 10. What is it? You have 4 tries"
-    );
     console.log(i);
 
-    if (question6() === 8) {
+    if (question6 === 8) {
       alert("Well done that was it");
-    } else if (question6() < 8) {
+    } else if (question6 < 8) {
       tries--;
       question6 = prompt("Nope, too small! You have " + tries + " tries left");
-    } else if (question6() > 8) {
+    } else if (question6 > 8) {
       tries--;
       question6 = prompt("Nope, too big! You have " + tries + " tries left");
     } else {
       tries--;
       prompt("That is not a number! You have " + tries + " tries left");
-      if ((attempts = 0)) {
-        alert(
-          "Aww, you've used u; all of your tries :( The correct answer was 8!"
-        );
-      }
     }
-  }
+  } // I had it working for a bit but the if(tries=0) wasnt, and for some reason even though that was removed it seems that answering 8 comes back with the "that is not a number" prompt.
 }
-
-// this wasnt working so get back to this
-//( if (question6() === 8) {
-//  alert("Nice one, you got it!");
-// } else if (question6() < 8) {
-//   let question6 = prompt("Bigger than that, try again");
-// } else if (question6() > 8) {
-//   let question6 = prompt("Smaller than that, give it another go");
-//  alert("Aww that's all folks. It was 8 all along");
 
 function changeColour() {
   let buttonColour = prompt("What is your favourite colour?");
 
   switch (buttonColour.toLowerCase()) {
     case "pink":
+      alert("nice, pinks my favourite too");
       console.log("nice, pinks my favourite too");
       break;
     case "red":
+      alert("beter red than fred");
       console.log("beter red than fred");
       break;
     default:
+      alert("That doesn't seem to be a real colour :( ");
       console.log("That doesn't seem to be a real colour :( ");
   }
 }
