@@ -99,21 +99,26 @@ function getNumber() {
   );
 
   for (let i = 4; i > 0; i--) {
-    console.log(i);
-
-    if (question6 === 8) {
+    console.log("i = " + i);
+    if (question6 == 8) {
       alert("Well done that was it");
+      console.log("Correct answer!");
+      return;
     } else if (question6 < 8) {
-      tries--;
-      question6 = prompt("Nope, too small! You have " + tries + " tries left");
+      question6 = prompt(
+        "Nope, too small! You have " + (i - 1) + " tries left"
+      );
+      console.log("Incorrect, too small!. " + (i - 1) + "tries left!");
     } else if (question6 > 8) {
-      tries--;
-      question6 = prompt("Nope, too big! You have " + tries + " tries left");
+      question6 = prompt("Nope, too big! You have " + (i - 1) + " tries left");
+      console.log("Incorrect, too big!. " + (i - 1) + "tries left!");
+    } else if (i > 1) {
+      prompt("That is not a number! You have " + (i - 1) + " tries left");
+      console.log("Incorrect, not a number. " + (i - 1) + "tries left!");
     } else {
-      tries--;
-      prompt("That is not a number! You have " + tries + " tries left");
+      alert("aww it seems you ran out if tries :( It was 8 all along!");
     }
-  } // I had it working for a bit but the if(tries=0) wasnt, and for some reason even though that was removed it seems that answering 8 comes back with the "that is not a number" prompt.
+  } // now I have the whole of getNumber working, though there is a bug with the not a number bit, since once it has been used any answer that isn't a letter comes up with the not a number prompt
 }
 
 function changeColour() {
