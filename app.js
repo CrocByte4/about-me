@@ -100,6 +100,10 @@ function getNumber() {
 
   for (let i = 4; i > 0; i--) {
     console.log("i = " + i);
+    if (i == 1) {
+      alert("aww it seems you ran out if tries :( It was 8 all along!");
+      break;
+    }
     if (question6 == 8) {
       alert("Well done that was it");
       console.log("Correct answer!");
@@ -112,13 +116,57 @@ function getNumber() {
     } else if (question6 > 8) {
       question6 = prompt("Nope, too big! You have " + (i - 1) + " tries left");
       console.log("Incorrect, too big!. " + (i - 1) + "tries left!");
-    } else if (i > 1) {
-      prompt("That is not a number! You have " + (i - 1) + " tries left");
+    } else if (isNaN(question6)) {
+      question6 = prompt(
+        "That is not a number! You have " + (i - 1) + " tries left"
+      );
       console.log("Incorrect, not a number. " + (i - 1) + "tries left!");
-    } else {
-      alert("aww it seems you ran out if tries :( It was 8 all along!");
     }
-  } // now I have the whole of getNumber working, though there is a bug with the not a number bit, since once it has been used any answer that isn't a letter comes up with the not a number prompt
+  }
+}
+
+// this part will be an array based guessing game with 6 attempts, will end when answered correctly or run out of attempts, display all correct answers after
+function getIrnMadn() {
+  alert("Well you got past that, but here's another time waster for ya!");
+
+  let tries = 6;
+
+  let songs = [
+    "run to the hills",
+    "the number of the beast",
+    "fear of the dark",
+    "speed of light",
+    "the writing on the wall",
+    "the trooper",
+    "die with your boots on",
+    "be quick or be dead",
+    "from here to eternity",
+    "chains of misery",
+    "gates of tomorrow",
+  ];
+  let songAnswer = prompt(
+    "Name one of the best Iron Maiden Songs! I'll give you " +
+      tries +
+      " tries for this one."
+  );
+  console.log("User input = " + songAnswer);
+
+  while (tries > 0) {
+    for (let i = 0; i < songs.length; i++) {
+      if (songAnswer.toLowerCase() == songs[i]) {
+        console.log("User gave a correct answer.");
+        alert("Well done, you got one!");
+        tries = 0;
+      }
+    }
+    if (tries > 0) {
+      console.log("User has " + tries + " tries left.");
+      songAnswer = prompt(
+        "Nope, keep at it, you've still got " + tries + " tries left!"
+      );
+      tries--;
+    }
+  }
 }
 
 function changeColour() {
