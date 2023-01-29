@@ -107,6 +107,7 @@ function getNumber() {
     if (question6 == 8) {
       alert("Well done that was it");
       console.log("Correct answer!");
+      quizScore++;
       return;
     } else if (question6 < 8) {
       question6 = prompt(
@@ -156,6 +157,7 @@ function getIrnMadn() {
       if (songAnswer.toLowerCase() == songs[i]) {
         console.log("User gave a correct answer.");
         alert("Well done, you got one!");
+        quizScore++;
         tries = 0;
       }
     }
@@ -167,22 +169,47 @@ function getIrnMadn() {
       tries--;
     }
   }
-}
-
-function changeColour() {
-  let buttonColour = prompt("What is your favourite colour?");
-
-  switch (buttonColour.toLowerCase()) {
-    case "pink":
-      alert("nice, pinks my favourite too");
-      console.log("nice, pinks my favourite too");
-      break;
-    case "red":
-      alert("beter red than fred");
-      console.log("beter red than fred");
-      break;
-    default:
-      alert("That doesn't seem to be a real colour :( ");
-      console.log("That doesn't seem to be a real colour :( ");
+  while (tries == 0) {
+    console.log("User correct or ran out of tries.");
+    alert("I would have accepted " + songs);
+    break;
   }
 }
+
+function finalScore() {
+  alert(
+    "You've reached the REAL end XD Well done. You earned a grand total " +
+      quizScore +
+      " of points!"
+  );
+  console.log("User finished quiz, earned points.");
+  if (quizScore < 3) {
+    alert("What a low score. Oh well, better luck next time ¯_(ツ)_/¯");
+    console.log("Low score alert");
+  } else if (quizScore < 6) {
+    alert("Not bad kid, not bad at all :)");
+    console.log("Mid score alert");
+  } else {
+    alert(
+      "You know me so well, or maybe you've just been stalking me. Either way you smashed it !!!"
+    );
+    console.log("High score alert");
+  }
+}
+
+//function changeColour() {
+//let buttonColour = prompt("What is your favourite colour?");
+//switch (buttonColour.toLowerCase()) {
+//  case "pink":
+//    alert("nice, pinks my favourite too");
+//    console.log("nice, pinks my favourite too");
+//    break;
+// case "red":
+//   alert("beter red than fred");
+//   console.log("beter red than fred");
+//   break;
+// default:
+//   alert("That doesn't seem to be a real colour :( ");
+//   console.log("That doesn't seem to be a real colour :( ");
+//}
+//}
